@@ -48,12 +48,6 @@
          myFunctionQuery_6();
      if (checkselect.indexOf("mudd.f3") >= 0)
          myFunctionQuery_7();
-     if (checkselect.indexOf("frances.f1") >= 0)
-         myFunctionQuery_8();
-     if (checkselect.indexOf("frances.f2") >= 0)
-         myFunctionQuery_9();
-     if (checkselect.indexOf("frances.f3") >= 0)
-         myFunctionQuery_10();
 
  };
 
