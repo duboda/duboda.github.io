@@ -74,23 +74,28 @@
 
     function ground() {
       floor = 0;
-      google.maps.event.addDomListener(window, 'load', initialize);
+      initialize();
+      google.maps.event.trigger(map, 'resize');
     }
     function first() {
       floor = 1;
-      google.maps.event.addDomListener(window, 'load', initialize);   
+      initialize();
+      google.maps.event.trigger(map, 'resize');   
     }
     function second() {
       floor = 2;
-      google.maps.event.addDomListener(window, 'load', initialize);
+      initialize();
+      google.maps.event.trigger(map, 'resize');
     }
     function third() {
       floor = 3;
-      google.maps.event.addDomListener(window, 'load', initialize);
+      initialize();
+      google.maps.event.trigger(map, 'resize');
     }
     function fourth() {
       floor = 4;
-      google.maps.event.addDomListener(window, 'load', initialize);
+      initialize();
+      google.maps.event.trigger(map, 'resize');
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);

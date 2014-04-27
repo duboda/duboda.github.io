@@ -7,6 +7,7 @@
  var scoreshow;
  var overall;
  var newscore;
+
  var current_building;
 
  var countChecked = function () {
@@ -165,6 +166,10 @@
  }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> FETCH_HEAD
 
 
 
@@ -237,7 +242,11 @@
      });
  }
 
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> FETCH_HEAD
 
  function myFunctionChange() {
      Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
@@ -283,7 +292,3 @@
      });
 
  };
-
- function query_bath() {
-
- }
