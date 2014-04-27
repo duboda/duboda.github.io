@@ -49,6 +49,13 @@
      if (checkselect.indexOf("mudd.f3") >= 0)
          myFunctionQuery_7();
 
+     if (checkselect.indexOf("frances.f1") >= 0)
+         myFunctionQuery_8();
+     if (checkselect.indexOf("frances.f2") >= 0)
+         myFunctionQuery_9();
+     if (checkselect.indexOf("frances.f3") >= 0)
+         myFunctionQuery_10();
+
  };
 
  function roundHalf(num) {
@@ -79,9 +86,11 @@
          getid = invoker.prop('id');
          console.log(getid);
 
-
+         var to_query='TechBathroom';
+            if(getid[0]==='f'){to_query='FranBathroom'};
+            if(getid[0]==='m'){to_query='MuddBathroom'};
          Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
-         var GameScore = Parse.Object.extend("TechBathroom");
+         var GameScore = Parse.Object.extend(to_query);
          var query = new Parse.Query(GameScore);
          query.equalTo("name", getid);
          query.find({
