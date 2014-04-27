@@ -5,10 +5,6 @@
  });
  var getid;
  var scoreshow;
- var overall;
- var newscore;
-
- var current_building;
 
  var countChecked = function () {
      // console.log("c");
@@ -47,17 +43,17 @@
      if (checkselect.indexOf("tech.f4") >= 0)
          myFunctionQuery_4();
      if (checkselect.indexOf("mudd.f1") >= 0)
-         myFunctionQuery_5();
+         alert("you can you up!mf1");
      if (checkselect.indexOf("mudd.f2") >= 0)
-         myFunctionQuery_6();
+         alert("you can you up!mf2");
      if (checkselect.indexOf("mudd.f3") >= 0)
-         myFunctionQuery_7();
+         alert("you can you up!mf3");
      if (checkselect.indexOf("francis.f1") >= 0)
-         myFunctionQuery_8();
+         alert("you can you up!ff1");
      if (checkselect.indexOf("francis.f2") >= 0)
-         myFunctionQuery_9();
+         alert("you can you up!ff2");
      if (checkselect.indexOf("francis.f3") >= 0)
-         myFunctionQuery_10();
+         alert("you can you up!ff3");
 
  };
 
@@ -166,10 +162,7 @@
  }
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> FETCH_HEAD
+ var overall;
 
 
 
@@ -242,11 +235,7 @@
      });
  }
 
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> FETCH_HEAD
+ var newscore;
 
  function myFunctionChange() {
      Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
@@ -292,3 +281,7 @@
      });
 
  };
+
+ function query_bath() {
+
+ }
