@@ -2,6 +2,8 @@
 // prompted by your browser.
 
 var map;
+var overlay;
+var floor = 2;
 
 
 
@@ -19,12 +21,46 @@ var Tech109 = new google.maps.LatLng(42.0575, -87.6752778);
 
 
 
-function initialize() {
+function initialize_map() {
+  var srcImage, swBound, neBound;
   var mapOptions = {
     zoom: 18
   };
+
+  switch (floor) {
+    case 0: 
+      srcImage = '../Ground_Floor_Map.png';
+      swBound = new google.maps.LatLng(42.05702067205062, -87.67693588954927);
+      neBound = new google.maps.LatLng(42.05859822275885, -87.67464099140176);
+      break;
+    case 1: 
+      srcImage = '../First_Floor_Map.png';
+      swBound = new google.maps.LatLng(42.05701270611957, -87.67687688095094);
+      neBound = new google.maps.LatLng(42.05861415422214, -87.6747214576722);
+      break;
+    case 2: 
+      srcImage = '../Second_Floor_Map.png';
+      swBound = new google.maps.LatLng(42.05689720000732, -87.6773006699753);
+      neBound = new google.maps.LatLng(42.05880533146994, -87.67459807605752);
+      break;
+    case 3: 
+      srcImage = '../Third_Floor_Map.png';
+      swBound = new google.maps.LatLng(42.057032620945286, -87.6769948981476);
+      neBound = new google.maps.LatLng(42.05858229129155, -87.674683906746);
+      break;
+    case 4:
+      srcImage = '../Fourth_Floor_Map.png';
+      swBound = new google.maps.LatLng(42.05705253576474, -87.67690370304109);
+      neBound = new google.maps.LatLng(42.05857830842409, -87.67475900859841); 
+      break;
+  }
+
   map = new google.maps.Map(document.getElementById('googleMap'),
       mapOptions);
+
+  var bounds = new google.maps.LatLngBounds(swBound, neBound);
+  overlay = new google.maps.GroundOverlay(srcImage, bounds);
+  overlay.setMap(map);
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
@@ -75,7 +111,7 @@ function initialize() {
   }
   clearMarkers();
   
-
+  //overlay.setMap(map);
 }
 
 function setAllMap(map){
@@ -126,8 +162,6 @@ function handleNoGeolocation(errorFlag) {
   var infowindow = new google.maps.InfoWindow(options);
   map.setCenter(options.position);
 }
-
-google.maps.event.addDomListener(window, 'load', initialize);
 
 function myFunctionQuery_G(){
   Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
@@ -811,3 +845,31 @@ function myFunctionQuery_10(){
   });
 };
 
+function ground() {
+    floor = 0;
+    initialize_map();
+    google.maps.event.trigger(map, 'resize');
+  }
+  function first() {
+    floor = 1;
+    console.log();
+    initialize_map();
+    google.maps.event.trigger(map, 'resize');   
+  }
+  function second() {
+    floor = 2;
+    initialize_map();
+    google.maps.event.trigger(map, 'resize');
+  }
+  function third() {
+    floor = 3;
+    initialize_map();
+    google.maps.event.trigger(map, 'resize');
+  }
+  function fourth() {
+    floor = 4;
+    initialize_map();
+    google.maps.event.trigger(map, 'resize');
+  }
+
+google.maps.event.addDomListener(window, 'load', initialize_map);

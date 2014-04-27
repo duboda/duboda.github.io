@@ -134,19 +134,24 @@
                         <div class="tab-content">
 
                             <div class="tab-pane btn-group btn-group-justified" data-toggle="buttons" id="tech">
-                                <label class="btn btn-primary">
+                                <label class="btn btn-primary"
+                                    onclick="ground()">
                                     <input type="radio" name="where" id="tech.f0">G
                                 </label>
-                                <label class="btn btn-primary">
-                                    <input type="radio" name="where" id="tech.f1">F1
+                                <label class="btn btn-primary"
+                                    onclick="first()">
+                                    <input type="radio" name="where" id="tech.f1" onclick="first()">F1
                                 </label>
-                                <label class="btn btn-primary">
+                                <label class="btn btn-primary"
+                                    onclick="second()">
                                     <input type="radio" name="where" id="tech.f2">F2
                                 </label>
-                                <label class="btn btn-primary">
+                                <label class="btn btn-primary"
+                                    onclick="third()">
                                     <input type="radio" name="where" id="tech.f3">F3
                                 </label>
-                                <label class="btn btn-primary">
+                                <label class="btn btn-primary"
+                                    onclick="fourth()">
                                     <input type="radio" name="where" id="tech.f4">F4
                                 </label>
                             </div>
@@ -188,7 +193,7 @@
         <div class="container" id="views">
 
             
-                <div id="googleMap"></div>
+                <div id="googleMap" onload="initialize_map()"></div>
             
 
             <div class="scroll">
