@@ -43,17 +43,17 @@
      if (checkselect.indexOf("tech.f4") >= 0)
          myFunctionQuery_4();
      if (checkselect.indexOf("mudd.f1") >= 0)
-         alert("you can you up!mf1");
+         myFunctionQuery_5();
      if (checkselect.indexOf("mudd.f2") >= 0)
-         alert("you can you up!mf2");
+         myFunctionQuery_6();
      if (checkselect.indexOf("mudd.f3") >= 0)
-         alert("you can you up!mf3");
+         myFunctionQuery_7();
      if (checkselect.indexOf("francis.f1") >= 0)
-         alert("you can you up!ff1");
+         myFunctionQuery_8();
      if (checkselect.indexOf("francis.f2") >= 0)
-         alert("you can you up!ff2");
+         myFunctionQuery_9();
      if (checkselect.indexOf("francis.f3") >= 0)
-         alert("you can you up!ff3");
+         myFunctionQuery_10();
 
  };
 
