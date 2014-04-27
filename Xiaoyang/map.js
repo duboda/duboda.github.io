@@ -3,7 +3,7 @@
 
 var map;
 var overlay;
-var floor = 2;
+var floor = 1;
 
 
 
