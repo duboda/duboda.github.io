@@ -7,13 +7,20 @@
 
 <body>
 <div id="googleMap" style="width:500px;height:380px;" onload = "initialize()"></div>
+<button type="button" onclick="ground()">Ground Floor</button>
+<button type="button" onclick="first()">First Floor</button>
+<button type="button" onclick="second()">Second Floor</button>
+<button type="button" onclick="third()">Third Floor</button>
+<button type="button" onclick="fourth()">Fourth Floor</button>
 
 
 
 <script>
     var overlay;
+    var floor = 0;
 
     function initialize() {
+     var srcImage, swBound, neBound;
      var tech = new google.maps.LatLng(42.057807,-87.675765);
 
       var mapOptions = {
@@ -21,9 +28,37 @@
         center: tech
       };
 
+      switch (floor) {
+        case 0: 
+          srcImage = 'Ground_Floor_Map.png';
+          swBound = new google.maps.LatLng(42.05702067205062, -87.67693588954927);
+          neBound = new google.maps.LatLng(42.05859822275885, -87.67464099140176);
+          break;
+        case 1: 
+          srcImage = 'First_Floor_Map.png';
+          swBound = new google.maps.LatLng(42.05701270611957, -87.67687688095094);
+          neBound = new google.maps.LatLng(42.05861415422214, -87.6747214576722);
+          break;
+        case 2: 
+          srcImage = 'Second_Floor_Map.png';
+          swBound = new google.maps.LatLng(42.05689720000732, -87.6773006699753);
+          neBound = new google.maps.LatLng(42.05880533146994, -87.67459807605752);
+          break;
+        case 3: 
+          srcImage = 'Third_Floor_Map.png';
+          swBound = new google.maps.LatLng(42.057032620945286, -87.6769948981476);
+          neBound = new google.maps.LatLng(42.05858229129155, -87.674683906746);
+          break;
+        case 4:
+          srcImage = 'Fourth_Floor_Map.png';
+          swBound = new google.maps.LatLng(42.05705253576474, -87.67690370304109);
+          neBound = new google.maps.LatLng(42.05857830842409, -87.67475900859841); 
+          break;
+      }
+
       var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
-      var swBound = new google.maps.LatLng(42.057036603909694, -87.6769412539673);
-      var neBound = new google.maps.LatLng(42.058618137087365, -87.67480728836068);      
+      //var swBound = new google.maps.LatLng(42.05702067205062, -87.67693588954927);
+      //var neBound = new google.maps.LatLng(42.05859822275885, -87.67464099140176);      
       var bounds = new google.maps.LatLngBounds(swBound, neBound);
 
       var srcImage = 'Ground_Floor_Map.png';
@@ -36,9 +71,30 @@
       overlay.setMap(map);
 
     }
-    
+
+    function ground() {
+      floor = 0;
+      google.maps.event.addDomListener(window, 'load', initialize);
+    }
+    function first() {
+      floor = 1;
+      google.maps.event.addDomListener(window, 'load', initialize);   
+    }
+    function second() {
+      floor = 2;
+      google.maps.event.addDomListener(window, 'load', initialize);
+    }
+    function third() {
+      floor = 3;
+      google.maps.event.addDomListener(window, 'load', initialize);
+    }
+    function fourth() {
+      floor = 4;
+      initialize():google.maps.event.addDomListener(window, 'load', initialize);
+    }
+
     google.maps.event.addDomListener(window, 'load', initialize);
-    
+
 </script>
 </body>
 </html>
