@@ -1,7 +1,7 @@
 a:link, a:visited{
     text-decoration: none;
 }
-#map-canvas {
+#googleMap {
     width: 275px;
     height: 335px;
     float:center;

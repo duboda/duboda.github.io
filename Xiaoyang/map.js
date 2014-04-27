@@ -23,7 +23,7 @@ function initialize() {
   var mapOptions = {
     zoom: 18
   };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
+  map = new google.maps.Map(document.getElementById('googleMap'),
       mapOptions);
 
   // Try HTML5 geolocation
