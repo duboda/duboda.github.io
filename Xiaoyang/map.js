@@ -440,6 +440,378 @@ function myFunctionQuery_4(){
 };
 
 
+function myFunctionQuery_5(){
+  Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
+  var GameScore = Parse.Object.extend("MuddBathroom");
+  var query = new Parse.Query(GameScore);
+  locationArray = [];
+  var gender = $("input[name='gender']:checked").val();
+  
+  console.log(gender);
+  query.equalTo("gender", gender)&&query.equalTo("floor",1);
+  query.find({
+    success: function(results) {
+      // alert("Successfully retrieved " + results.length + " scores.");
+      // Do something with the returned Parse.Object values
+      for (var i = 0; i < results.length; i++) { 
+        var object = results[i];
+        var Tech = new google.maps.LatLng(object.get('latitude'),object.get('longitude'));
+        locationArray[i] =  Tech;
+        locationNameArray[i] = object.get('name');
+
+      }
+      clearMarkers();
+
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude,
+          position.coords.longitude);
+
+ //         locationArray = pos;
+         map.setCenter(pos);
+         var marker = new google.maps.Marker({
+           position: pos,
+           map: map,
+           title: "I'm Here",
+           icon: image
+         });
+         markers.push(marker);
+        }, function() {
+          handleNoGeolocation(true);
+        });
+      } else {
+      // Browser doesn't support Geolocation
+        handleNoGeolocation(false);
+      }
+      var i=0;
+      for (coord in locationArray) {
+        var marker = new google.maps.Marker({
+        position: locationArray[coord],
+        map: map,
+        title: locationNameArray[coord]
+      });
+      markers.push(marker);
+      attachActivityMessage(marker, i);
+      i++;
+      }
+
+      },
+      error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+      }
+  });
+};
 
 
+function myFunctionQuery_6(){
+  Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
+  var GameScore = Parse.Object.extend("MuddBathroom");
+  var query = new Parse.Query(GameScore);
+  locationArray = [];
+  var gender = $("input[name='gender']:checked").val();
+  
+  console.log(gender);
+  query.equalTo("gender", gender)&&query.equalTo("floor",2);
+  query.find({
+    success: function(results) {
+      // alert("Successfully retrieved " + results.length + " scores.");
+      // Do something with the returned Parse.Object values
+      for (var i = 0; i < results.length; i++) { 
+        var object = results[i];
+        var Tech = new google.maps.LatLng(object.get('latitude'),object.get('longitude'));
+        locationArray[i] =  Tech;
+        locationNameArray[i] = object.get('name');
+
+      }
+      clearMarkers();
+
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude,
+          position.coords.longitude);
+
+ //         locationArray = pos;
+         map.setCenter(pos);
+         var marker = new google.maps.Marker({
+           position: pos,
+           map: map,
+           title: "I'm Here",
+           icon: image
+         });
+         markers.push(marker);
+        }, function() {
+          handleNoGeolocation(true);
+        });
+      } else {
+      // Browser doesn't support Geolocation
+        handleNoGeolocation(false);
+      }
+      var i=0;
+      for (coord in locationArray) {
+        var marker = new google.maps.Marker({
+        position: locationArray[coord],
+        map: map,
+        title: locationNameArray[coord]
+      });
+      markers.push(marker);
+      attachActivityMessage(marker, i);
+      i++;
+      }
+
+      },
+      error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+      }
+  });
+};
+
+function myFunctionQuery_7(){
+  Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
+  var GameScore = Parse.Object.extend("MuddBathroom");
+  var query = new Parse.Query(GameScore);
+  locationArray = [];
+  var gender = $("input[name='gender']:checked").val();
+  
+  console.log(gender);
+  query.equalTo("gender", gender)&&query.equalTo("floor",3);
+  query.find({
+    success: function(results) {
+      // alert("Successfully retrieved " + results.length + " scores.");
+      // Do something with the returned Parse.Object values
+      for (var i = 0; i < results.length; i++) { 
+        var object = results[i];
+        var Tech = new google.maps.LatLng(object.get('latitude'),object.get('longitude'));
+        locationArray[i] =  Tech;
+        locationNameArray[i] = object.get('name');
+
+      }
+      clearMarkers();
+
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude,
+          position.coords.longitude);
+
+ //         locationArray = pos;
+         map.setCenter(pos);
+         var marker = new google.maps.Marker({
+           position: pos,
+           map: map,
+           title: "I'm Here",
+           icon: image
+         });
+         markers.push(marker);
+        }, function() {
+          handleNoGeolocation(true);
+        });
+      } else {
+      // Browser doesn't support Geolocation
+        handleNoGeolocation(false);
+      }
+      var i=0;
+      for (coord in locationArray) {
+        var marker = new google.maps.Marker({
+        position: locationArray[coord],
+        map: map,
+        title: locationNameArray[coord]
+      });
+      markers.push(marker);
+      attachActivityMessage(marker, i);
+      i++;
+      }
+
+      },
+      error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+      }
+  });
+};
+
+
+
+function myFunctionQuery_8(){
+  Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
+  var GameScore = Parse.Object.extend("FranBathroom");
+  var query = new Parse.Query(GameScore);
+  locationArray = [];
+  var gender = $("input[name='gender']:checked").val();
+  
+  console.log(gender);
+  query.equalTo("gender", gender)&&query.equalTo("floor",1);
+  query.find({
+    success: function(results) {
+      // alert("Successfully retrieved " + results.length + " scores.");
+      // Do something with the returned Parse.Object values
+      for (var i = 0; i < results.length; i++) { 
+        var object = results[i];
+        var Tech = new google.maps.LatLng(object.get('latitude'),object.get('longitude'));
+        locationArray[i] =  Tech;
+        locationNameArray[i] = object.get('name');
+
+      }
+      clearMarkers();
+
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude,
+          position.coords.longitude);
+
+ //         locationArray = pos;
+         map.setCenter(pos);
+         var marker = new google.maps.Marker({
+           position: pos,
+           map: map,
+           title: "I'm Here",
+           icon: image
+         });
+         markers.push(marker);
+        }, function() {
+          handleNoGeolocation(true);
+        });
+      } else {
+      // Browser doesn't support Geolocation
+        handleNoGeolocation(false);
+      }
+      var i=0;
+      for (coord in locationArray) {
+        var marker = new google.maps.Marker({
+        position: locationArray[coord],
+        map: map,
+        title: locationNameArray[coord]
+      });
+      markers.push(marker);
+      attachActivityMessage(marker, i);
+      i++;
+      }
+
+      },
+      error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+      }
+  });
+};
+
+function myFunctionQuery_9(){
+  Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
+  var GameScore = Parse.Object.extend("FranBathroom");
+  var query = new Parse.Query(GameScore);
+  locationArray = [];
+  var gender = $("input[name='gender']:checked").val();
+  
+  console.log(gender);
+  query.equalTo("gender", gender)&&query.equalTo("floor",2);
+  query.find({
+    success: function(results) {
+      // alert("Successfully retrieved " + results.length + " scores.");
+      // Do something with the returned Parse.Object values
+      for (var i = 0; i < results.length; i++) { 
+        var object = results[i];
+        var Tech = new google.maps.LatLng(object.get('latitude'),object.get('longitude'));
+        locationArray[i] =  Tech;
+        locationNameArray[i] = object.get('name');
+
+      }
+      clearMarkers();
+
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude,
+          position.coords.longitude);
+
+ //         locationArray = pos;
+         map.setCenter(pos);
+         var marker = new google.maps.Marker({
+           position: pos,
+           map: map,
+           title: "I'm Here",
+           icon: image
+         });
+         markers.push(marker);
+        }, function() {
+          handleNoGeolocation(true);
+        });
+      } else {
+      // Browser doesn't support Geolocation
+        handleNoGeolocation(false);
+      }
+      var i=0;
+      for (coord in locationArray) {
+        var marker = new google.maps.Marker({
+        position: locationArray[coord],
+        map: map,
+        title: locationNameArray[coord]
+      });
+      markers.push(marker);
+      attachActivityMessage(marker, i);
+      i++;
+      }
+
+      },
+      error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+      }
+  });
+};
+
+function myFunctionQuery_10(){
+  Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
+  var GameScore = Parse.Object.extend("FranBathroom");
+  var query = new Parse.Query(GameScore);
+  locationArray = [];
+  var gender = $("input[name='gender']:checked").val();
+  
+  console.log(gender);
+  query.equalTo("gender", gender)&&query.equalTo("floor",3);
+  query.find({
+    success: function(results) {
+      // alert("Successfully retrieved " + results.length + " scores.");
+      // Do something with the returned Parse.Object values
+      for (var i = 0; i < results.length; i++) { 
+        var object = results[i];
+        var Tech = new google.maps.LatLng(object.get('latitude'),object.get('longitude'));
+        locationArray[i] =  Tech;
+        locationNameArray[i] = object.get('name');
+
+      }
+      clearMarkers();
+
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude,
+          position.coords.longitude);
+
+ //         locationArray = pos;
+         map.setCenter(pos);
+         var marker = new google.maps.Marker({
+           position: pos,
+           map: map,
+           title: "I'm Here",
+           icon: image
+         });
+         markers.push(marker);
+        }, function() {
+          handleNoGeolocation(true);
+        });
+      } else {
+      // Browser doesn't support Geolocation
+        handleNoGeolocation(false);
+      }
+      var i=0;
+      for (coord in locationArray) {
+        var marker = new google.maps.Marker({
+        position: locationArray[coord],
+        map: map,
+        title: locationNameArray[coord]
+      });
+      markers.push(marker);
+      attachActivityMessage(marker, i);
+      i++;
+      }
+
+      },
+      error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+      }
+  });
+};
 
