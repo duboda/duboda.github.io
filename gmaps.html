@@ -61,7 +61,7 @@
       //var neBound = new google.maps.LatLng(42.05859822275885, -87.67464099140176);      
       var bounds = new google.maps.LatLngBounds(swBound, neBound);
 
-      var srcImage = 'Ground_Floor_Map.png';
+      //var srcImage = 'Ground_Floor_Map.png';
       //var srcImage = 'First_Floor_Map.png';
       //var srcImage = 'Second_Floor_Map.png';
       //var srcImage = 'Third_Floor_Map.png';
@@ -78,7 +78,6 @@
     }
     function first() {
       floor = 1;
-      console.log('first() was actually called');
       google.maps.event.addDomListener(window, 'load', initialize);   
     }
     function second() {
