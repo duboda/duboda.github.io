@@ -25,7 +25,7 @@
 
      var rows = $('table.table tr');
      console.log(rows);
-
+     console.log(checkselect);
      var shows = rows.filter(checkselect);
      console.log(shows);
      shows.show('slow');
@@ -43,17 +43,17 @@
      if (checkselect.indexOf("tech.f4") >= 0)
          myFunctionQuery_4();
      if (checkselect.indexOf("mudd.f1") >= 0)
-         alert("you can you up!mf1");
+         myFunctionQuery_5();
      if (checkselect.indexOf("mudd.f2") >= 0)
-         alert("you can you up!mf2");
+         myFunctionQuery_6();
      if (checkselect.indexOf("mudd.f3") >= 0)
-         alert("you can you up!mf3");
-     if (checkselect.indexOf("francis.f1") >= 0)
-         alert("you can you up!ff1");
-     if (checkselect.indexOf("francis.f2") >= 0)
-         alert("you can you up!ff2");
-     if (checkselect.indexOf("francis.f3") >= 0)
-         alert("you can you up!ff3");
+         myFunctionQuery_7();
+     if (checkselect.indexOf("frances.f1") >= 0)
+         myFunctionQuery_8();
+     if (checkselect.indexOf("frances.f2") >= 0)
+         myFunctionQuery_9();
+     if (checkselect.indexOf("frances.f3") >= 0)
+         myFunctionQuery_10();
 
  };
 
@@ -110,6 +110,7 @@
                  alert("Error: " + error.code + " " + error.message);
              }
          });
+
          //======
 
 
@@ -136,7 +137,7 @@
 
  });
 
- function redraw(obj) {
+ function redraw(obj,building) {
      var scorestar = obj.get('overall');
      if (scorestar > 0)
          scorestar = roundHalf(scorestar / obj.get('number'));
@@ -147,7 +148,7 @@
      else color = ' style = "background: radial-gradient(#fccfcf, rgba(255,0,0,0))" ';
 
      var to_append = '<tr '+ color +' class = "' + obj.get('gender') + ' ' +
-         'tech' + ' ' + 'f' + obj.get('floor') + '" ' + 'data-toggle = "modal" data-target="#details" ' + 'id = "' + obj.get('name') + '">' +
+         building + ' ' + 'f' + obj.get('floor') + '" ' + 'data-toggle = "modal" data-target="#details" ' + 'id = "' + obj.get('name') + '">' +
          '<td>' + obj.get('name') + '</td>' +
          '<td><div id = "' + obj.get('name') + '-" value = "' + scorestar + '"></div></td></tr>';
 
@@ -191,7 +192,7 @@
                      object.save();
                  }
                  // console.log(object.get('gender'));
-                 redraw(object);
+                 redraw(object,'tech');
 
              }
          },
@@ -214,7 +215,7 @@
                      object.save();
                  }
                  // console.log(object.get('gender'));
-                 redraw(object);
+                 redraw(object,'tech');
 
 
              }
@@ -233,13 +234,86 @@
          }
 
      });
+
+     //==frances
+     Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
+     var GameScore = Parse.Object.extend("FranBathroom");
+     var query1 = new Parse.Query(GameScore);
+     var query2 = new Parse.Query(GameScore);
+
+
+     query1.equalTo("gender", "M") && query1.descending("waittime");
+     query2.equalTo("gender", "F") && query2.descending("waittime");
+     query1.find({
+         success: function (results) {
+             console.log("Successfully retrieved Male" + results.length + " scores.");
+             // Do something with the returned Parse.Object values
+             for (var i = 0; i < results.length; i++) {
+                 var object = results[i];
+                 var number2 = object.get('number');
+                 var over = object.get('overall');
+                 if (over > 0) {
+                     var ave = over / number2;
+                     object.set("waittime", ave);
+                     object.save();
+                 }
+                 // console.log(object.get('gender'));
+                 redraw(object,'frances');
+
+             }
+         },
+         error: function (error) {
+             alert("Error: " + error.code + " " + error.message);
+         }
+     });
+     //======
+     query2.find({
+         success: function (results) {
+             console.log("Successfully retrieved Famle" + results.length + " scores.");
+             // Do something with the returned Parse.Object values
+             for (var i = 0; i < results.length; i++) {
+                 var object = results[i];
+                 var number2 = object.get('number');
+                 var over = object.get('overall');
+                 if (over > 0) {
+                     var ave = over / number2;
+                     object.set("waittime", ave);
+                     object.save();
+                 }
+                 // console.log(object.get('gender'));
+                 redraw(object,'frances');
+
+
+             }
+         },
+         error: function (error) {
+             alert("Error: " + error.code + " " + error.message);
+         }
+     });
+
+     $('#list').hide();
+
+     $('.raty').raty({
+         click: function (score) {
+             overall = score;
+             //            alert(overall)
+         }
+
+     });
+
  }
 
  var newscore;
 
  function myFunctionChange() {
+    console.log(getid[0]);
+    //----
+    var to_query='TechBathroom';
+    if(getid[0]==='f'){to_query='FranBathroom'};
+    if(getid[0]==='m'){to_query='MuddBathroom'};
+
      Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
-     var GameScore = Parse.Object.extend("TechBathroom");
+     var GameScore = Parse.Object.extend(to_query);
      var query = new Parse.Query(GameScore);
      query.equalTo("name", getid);
      query.find({
@@ -281,7 +355,3 @@
      });
 
  };
-
- function query_bath() {
-
- }
