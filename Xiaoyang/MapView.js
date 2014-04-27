@@ -72,11 +72,11 @@
      $("#view-list").on('click', function () {
          console.log("list");
          $('#list').show();
-         $('#map').hide();
+         $('#googleMap').hide();
      });
      $("#view-map").on('click', function () {
          console.log("map");
-         $('#map').show();
+         $('#googleMap').show();
          $('#list').hide();
      })
 
