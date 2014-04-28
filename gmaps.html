@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC-gJFWydcdeuyXAxoda6GHf77pU9fCfW0&sensor=true">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 </script>
 </head>
 
@@ -74,23 +74,28 @@
 
     function ground() {
       floor = 0;
-      google.maps.event.addDomListener(window, 'load', initialize);
+      initialize();
+      google.maps.event.trigger(map, 'resize');
     }
     function first() {
       floor = 1;
-      google.maps.event.addDomListener(window, 'load', initialize);   
+      initialize();
+      google.maps.event.trigger(map, 'resize');   
     }
     function second() {
       floor = 2;
-      google.maps.event.addDomListener(window, 'load', initialize);
+      initialize();
+      google.maps.event.trigger(map, 'resize');
     }
     function third() {
       floor = 3;
-      google.maps.event.addDomListener(window, 'load', initialize);
+      initialize();
+      google.maps.event.trigger(map, 'resize');
     }
     function fourth() {
       floor = 4;
-      google.maps.event.addDomListener(window, 'load', initialize);
+      initialize();
+      google.maps.event.trigger(map, 'resize');
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
