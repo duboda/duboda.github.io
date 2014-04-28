@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Find the closest or highest rated bathrooms on campus. View ratings and write reviews to ensure that you never have to use another smelly, crowded or unstocked bathroom again.">
@@ -10,56 +10,53 @@
     <link rel="shortcut icon" href="favicon_2.ico" type="image/x-icon">
     <link rel="icon" href="favicon_2.ico" type="image/x-icon">
     
-    <!--<link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">-->
-
-     <title>StallScrawl</title>
-     
-     <center><img src="front_page2.png" class="img-responsive" width = "100%" height = "auto"></center>
-     
-     <link href="theme.css" rel="stylesheet">
-
+    <title>StallScrawl</title>
+    <link href="theme.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-	   <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-	   <link href="http://getbootstrap.com/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="theme.css" rel = "stylesheet">
+	  <link href="http://getbootstrap.com/dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="theme_frontpage.css" rel = "stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-  	<!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script type = "text/javascript" >
+    // $(document).off('.modal.data-api')
+    // alert("hello word!");
+    </script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+
+
+
+
   </head>
   <body>
-	<div class="container-fluid" role="main">
-		    <!--
-        <br><br>
-        <h4>I am a:</h4>
-          <p>
-            <div class="btn-group">
-                <button type="button" class="btn btn-lg btn-primary">
-                  <div class="checkbox">
-                    <label><input type="checkbox" id = "female" value="F">Female</label>
-                  </div>
-                </button>
-                <button type="button" class="btn btn-lg btn-primary" disabled="disabled">
-                  <div class="checkbox">
-                    <label><input type="checkbox" id = "male" value="M">Male</label>
-                  </div>
-                </button>
+    <img src="front_page2.png" class="img-responsive" width = "100%" height = "100%">
+	  <div class="container-fluid" role="main">
+      
+      
+      <p><button type="button" class="btn btn-lg btn-primary btn-block" onclick="location='Xiaoyang/MapView.html'">Find Bathroom Now!</button></p>
+      <button class="btn btn-lg btn-primary btn-block" data-toggle = "modal" data-target = "#about" >about</button>
+        
+        <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Welcome to use StallScrawl!</h4>
+              </div>
+              <div class="modal-body">
+                <p>StallScrawl is designed for seeking a nearst Bathroom near you in Northwestern University ! Also you can rating the Bathrooms for fun !</p>
+                <p>Enjoy it !</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Got it !</button>
+              </div>
             </div>
-          </p>
-        <br><br>
-        -->
-        <br><br>
-    		<p><button type="button" class="btn btn-lg btn-primary btn-block" onclick="location='Xiaoyang/MapView.html'">Click Here to Get Started</button></p>
+          </div>
+        </div>       
+
 
     </div>
-</body>
+  </body>
 </html>
