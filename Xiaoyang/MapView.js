@@ -67,7 +67,10 @@
 
      initialize();
 
-     $(":radio").change(countChecked);
+     $(":radio").change(function(){
+        countChecked();
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+     });
 
      $("#view-list").on('click', function () {
          console.log("list");
@@ -358,3 +361,4 @@
      });
 
  };
+
