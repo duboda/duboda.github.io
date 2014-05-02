@@ -362,3 +362,20 @@
 
  };
 
+function sendMail() {
+    console.log(getid);
+    var bld;
+    var room;
+    if(getid[0]=='f') {bld = 'Frances';room = getid.substring(1);}
+        else if (getid[0]=='m') {bld = 'Mudd';room = getid.substring(1);}
+            else {bld = 'Tech';room = getid;};
+
+    var link = "mailto:xiaoyangtan2013@u.northwestern.edu"
+             + "?cc=duboda507@gmail.com;"+"CraigOlson2015@u.northwestern.edu;"+"LiangGe1.2013@u.northwestern.edu;"+"SamaKadakia2014@u.northwestern.edu;"
+             + "&subject=" + escape("Error report for "+bld+' '+room)
+             + "&body="+escape('I\'d like to inform you of a mistake on bathroom '+room+' of '+bld+'\n'
+                +'The correct lagtitude is \n'+'The correct longtitude is \n');
+    ;
+
+    window.location.href = link;
+}
