@@ -187,7 +187,7 @@
      query2.equalTo("gender", "F") && query2.descending("waittime");
      query1.find({
          success: function (results) {
-             console.log("Successfully retrieved Male" + results.length + " scores.");
+             console.log("Successfully retrieved Male" + results.length + " scores from tech");
              // Do something with the returned Parse.Object values
              for (var i = 0; i < results.length; i++) {
                  var object = results[i];
@@ -210,7 +210,7 @@
      //======
      query2.find({
          success: function (results) {
-             console.log("Successfully retrieved Famle" + results.length + " scores.");
+             console.log("Successfully retrieved Famle" + results.length + " scores from tech");
              // Do something with the returned Parse.Object values
              for (var i = 0; i < results.length; i++) {
                  var object = results[i];
@@ -253,7 +253,7 @@
      query2.equalTo("gender", "F") && query2.descending("waittime");
      query1.find({
          success: function (results) {
-             console.log("Successfully retrieved Male" + results.length + " scores.");
+             console.log("Successfully retrieved Male" + results.length + " scores from Frances");
              // Do something with the returned Parse.Object values
              for (var i = 0; i < results.length; i++) {
                  var object = results[i];
@@ -276,7 +276,7 @@
      //======
      query2.find({
          success: function (results) {
-             console.log("Successfully retrieved Famle" + results.length + " scores.");
+             console.log("Successfully retrieved Famle" + results.length + " scores. from Frances");
              // Do something with the returned Parse.Object values
              for (var i = 0; i < results.length; i++) {
                  var object = results[i];
@@ -289,6 +289,62 @@
                  }
                  // console.log(object.get('gender'));
                  redraw(object,'frances');
+
+
+             }
+         },
+         error: function (error) {
+             alert("Error: " + error.code + " " + error.message);
+         }
+     });
+
+     //==Mudd
+     Parse.initialize("om9ynedsIy67rU9vfQh8IVR2vv0A6WnFz0jgWUrP", "mzPU7M8YQwD83alRhWwGtM9niEiDcSKs4mOKSNbp");
+     var GameScore = Parse.Object.extend("MuddBathroom");
+     var query1 = new Parse.Query(GameScore);
+     var query2 = new Parse.Query(GameScore);
+
+
+     query1.equalTo("gender", "M") && query1.descending("waittime");
+     query2.equalTo("gender", "F") && query2.descending("waittime");
+     query1.find({
+         success: function (results) {
+             console.log("Successfully retrieved Male" + results.length + " scores. from Mudd");
+             // Do something with the returned Parse.Object values
+             for (var i = 0; i < results.length; i++) {
+                 var object = results[i];
+                 var number2 = object.get('number');
+                 var over = object.get('overall');
+                 if (over > 0) {
+                     var ave = over / number2;
+                     object.set("waittime", ave);
+                     object.save();
+                 }
+                 // console.log(object.get('gender'));
+                 redraw(object,'mudd');
+
+             }
+         },
+         error: function (error) {
+             alert("Error: " + error.code + " " + error.message);
+         }
+     });
+     //======
+     query2.find({
+         success: function (results) {
+             console.log("Successfully retrieved Famle" + results.length + " scores from Mudd.");
+             // Do something with the returned Parse.Object values
+             for (var i = 0; i < results.length; i++) {
+                 var object = results[i];
+                 var number2 = object.get('number');
+                 var over = object.get('overall');
+                 if (over > 0) {
+                     var ave = over / number2;
+                     object.set("waittime", ave);
+                     object.save();
+                 }
+                 // console.log(object.get('gender'));
+                 redraw(object,'mudd');
 
 
              }
