@@ -155,8 +155,9 @@
 
      var to_append = '<tr '+ color +' class = "' + obj.get('gender') + ' ' +
          building + ' ' + 'f' + obj.get('floor') + '" ' + 'data-toggle = "modal" data-target="#details" ' + 'id = "' + obj.get('name') + '">' +
-         '<td style = "font-family: \'Architects Daughter\', cursive;">' + obj.get('name') + '</td>' +
-         '<td><div id = "' + obj.get('name') + '-" value = "' + scorestar + '"></div></td></tr>';
+         '<td class="col-xs-2" style = "font-family: \'Architects Daughter\', cursive;">' + obj.get('name') + '</td>' +
+         '<td ><div id = "' + obj.get('name') + '-" value = "' + scorestar + '"></div></td>'
+         +'<td >'+obj.get('number')+' review</td></tr>';
 
 
      $('tbody').append(to_append);
