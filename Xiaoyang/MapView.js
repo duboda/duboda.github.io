@@ -155,7 +155,7 @@
 
      var to_append = '<tr '+ color +' class = "' + obj.get('gender') + ' ' +
          building + ' ' + 'f' + obj.get('floor') + '" ' + 'data-toggle = "modal" data-target="#details" ' + 'id = "' + obj.get('name') + '">' +
-         '<td>' + obj.get('name') + '</td>' +
+         '<td style = "font-family: \'Architects Daughter\', cursive;">' + obj.get('name') + '</td>' +
          '<td><div id = "' + obj.get('name') + '-" value = "' + scorestar + '"></div></td></tr>';
 
 

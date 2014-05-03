@@ -8,6 +8,7 @@
     <meta name="description" content="Find the closest or highest rated bathrooms on campus. View ratings and write reviews to ensure that you never have to use another smelly, crowded or unstocked bathroom again.">
     <meta name="author" content="Team Stall Scrawl">
     <link rel="shortcut icon" href="favicon_2.ico" type="image/x-icon">
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt|Architects+Daughter|Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="icon" href="favicon_2.ico" type="image/x-icon">
     
     <title>StallScrawl</title>
@@ -31,25 +32,33 @@
 
 
   </head>
-  <body>
+  <body style = "font-family: 'Architects Daughter', cursive">
     <img src="front_page2.png" class="img-responsive" width = "100%" height = "100%">
 	  <div class="container-fluid" role="main">
       
       
       <p>
-      <button class="btn btn-lg btn-primary btn-block" data-toggle = "modal" data-target = "#about" >About Stall Scrawl</button>
+      <button class="btn btn-lg btn-info btn-block" data-toggle = "modal" data-target = "#about" >About</button>
         
         <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Welcome to StallScrawl!</h4>
+                <center><h4 class="modal-title" id="myModalLabel">What Does It Do?</h4></center>
               </div>
-              <div class="modal-body">
-                <p> Did you know that Tech has 49 bathrooms? Have you ever tried navigating the hallways to find a bathroom only to pass three restrooms for the opposite gender before finding one that you can actually use? Luckily, Stall Scrawl is here to come to your rescue! Stall Scrawl shows you the location of the nearest restroom that you can actually use so that when you really need to go, you won't be wasting precious moments wandering around the labyrinth of hallways. You can also view ratings and submit your own reviews to share with other Stall Scrawl users. 
-                  <br><br>
-                Click 'Find Bathroom Now!' to get started. Then select a gender, building, and floor to display restrooms near you.
+              <div class="modal-body" style = "font-family: 'Architects Daughter', cursive">
+                
+                <p>So you think it's awkward to ask strangers where the bathroom is ... 
                 </p>
+                
+                <p>But not with <strong style = "font-family: 'Rock Salt', cursive;">StallScrawl</strong>! 
+                  <div style = "font-family: 'Open Sans', sans-serif;">:-D</div></p>
+               <ul>
+                <li>In a rush? <strong>Navigate to the nearest!</strong></li>
+                <li>Someone didn't flush? <strong>Get a better one with more stars! </strong></li>
+                <li>This is it! <strong>Rate it!</strong></li>
+              </ul>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Got it!</button>
@@ -58,7 +67,7 @@
           </div>
         </div>     
 
-        <button type="button" class="btn btn-lg btn-primary btn-block" onclick="location='Xiaoyang/MapView.html'">Find Bathroom Now!</button></p>  
+        <button type="button" class="btn btn-lg btn-default btn-block" onclick="location='Xiaoyang/MapView.html'">Get Started!</button></p>  
 
 
     </div>

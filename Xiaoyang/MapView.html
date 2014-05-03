@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href='http://fonts.googleapis.com/css?family=Frijole|Rock+Salt|Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
     <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"> -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -38,11 +38,11 @@
 
 </head>
 
-<body>
+<body >
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#" onclick="location='../index.html'">StallScrawl</a>
+                <a class="navbar-brand" href="#" onclick="location='../index.html'" style = "font-family: 'Rock Salt', cursive;">StallScrawl</a>
             </div>
             <!--
             <div class="navbar-collapse collapse">
@@ -80,7 +80,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style = "font-family: 'Architects Daughter', cursive;font-weight:bold">
         <div class="row">
             <div class="col-xs-6 ">
                 <div class="btn-group btn-group-justified" id="view-option">
@@ -111,8 +111,8 @@
     </div>
 
 
-    <p>
-        <div class="container">
+    <p >
+        <div class="container" style = "font-family: 'Architects Daughter', cursive;font-weight:bold">
             <div class="col-xs-12" id="buildings_floors">
 
                 <div class="row" id="buildings">
@@ -124,7 +124,7 @@
                             <a href="#mudd" data-toggle="tab">Mudd</a>
                         </li>
                         <li>
-                            <a href="#frances" data-toggle="tab">frances</a>
+                            <a href="#frances" data-toggle="tab">Frances</a>
                         </li>
                     </ul>
                 </div>
@@ -198,7 +198,7 @@
 
             <div class="scroll">
                 <table class="table" id="list">
-                    <thead>
+                    <thead style = "font-family: 'Architects Daughter', cursive;font-weight:bold">
                         <tr id = "head">
                             <th>#</th>
                             <th id="stars">stars</th>
@@ -220,7 +220,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
                     <!-- <h2 class="modal-title" id="myModalLabel">Men's 3rd Floor Mudd</h2> -->
                 </div>
 
@@ -232,23 +232,23 @@
                 <div class="modal-body">
                     <h2></h2>
 
-                    <div>
+                    <div style = "font-family: 'Architects Daughter', cursive;font-weight:bold">
                         <h4>Overall Ratings:</h4>
                     </div>
                     <div class="starraty"></div>
 
-                    <div>
+                    <div style = "font-family: 'Architects Daughter', cursive;font-weight:bold">
                         <h4>Submit your own review!</h4>
                     </div>
-                    <h4> Overall Ratings:</h4> 
+                    <h4 style = "font-family: 'Architects Daughter', cursive;font-weight:bold"> Overall Ratings:</h4> 
                     <div class="raty">
                     </div>
                     <div class="modal-footer">
-
-<button type="button" class="btn btn-default" data-dismiss="modal" onclick="sendMail(); return false">Report</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button submit" class="btn btn-primary" onclick="myFunctionChange()" data-dismiss="modal">Save changes</button>
-                        
+<p style = "font-family: 'Frijole', cursive;">
+<button type="button" class="btn btn-warning" data-dismiss="modal" onclick="sendMail(); return false">Report</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+                        <button type="button submit" class="btn btn-primary" onclick="myFunctionChange()" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span></button>
+                        </p>
                     </div>
                 </div>
 
